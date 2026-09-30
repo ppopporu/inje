@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2F5D46">
+<title>남성목장 야유회 · 설악과 인제</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#E9EBE6;--card:#F7F8F5;--ink:#1F2A24;--soft:#5B6760;--pine:#2F5D46;--maple:#B8412B;--line:#CBD1CA;--ridge:#D5DAD3;--onpine:#F2F5F1;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root{--bg:#131915;--card:#1B231E;--ink:#E4E9E3;--soft:#9AA69E;--pine:#7FB597;--maple:#E0735A;--line:#2E3A33;--ridge:#232C26;--onpine:#10180F}}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);overflow-x:hidden;font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;font-size:16px;line-height:1.6;word-break:keep-all;overflow-wrap:break-word;-webkit-tap-highlight-color:transparent}
+.serif{font-family:"Gowun Batang","Nanum Myeongjo",serif}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+a{color:var(--pine)}
+:focus-visible{outline:2px solid var(--maple);outline-offset:3px;border-radius:4px}
+.hero{padding:40px 0 0;overflow:hidden}
+.church{font-size:.95rem;color:var(--soft);margin:0 0 8px}
+.hero h1{font-size:clamp(2.3rem,11vw,3.8rem);line-height:1.15;margin:0}
+.hero p.lede{margin:14px 0 0;color:var(--soft);max-width:30em}
+.ridge{display:block;width:100%;height:auto;margin-top:24px}
+.ridge .far{fill:var(--ridge)}.ridge .near{fill:var(--pine)}
+.facts{background:var(--pine);color:var(--onpine);padding:16px 0 20px}
+.facts dl{display:grid;grid-template-columns:1.3fr 1fr .6fr;gap:12px;margin:0}
+.facts dt{font-size:.8rem;opacity:.8}.facts dd{margin:2px 0 0;font-weight:600;line-height:1.35}
+.dday{display:inline-block;margin-top:12px;font-size:.9rem}
+.daynav{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.daynav .wrap{display:flex;gap:8px;overflow-x:auto;padding-top:10px;padding-bottom:10px;scrollbar-width:none}
+.daynav .wrap::-webkit-scrollbar{display:none}
+.daynav a{flex:none;text-decoration:none;color:var(--ink);font-size:.9rem;padding:8px 14px;min-height:40px;display:inline-flex;align-items:center;border-radius:99px;border:1px solid var(--line);background:var(--card)}
+.daynav a.on{background:var(--pine);border-color:var(--pine);color:var(--onpine)}
+.nowbar{margin:20px 0 0;padding:14px 16px;border-left:4px solid var(--maple);background:var(--card);border-radius:0 8px 8px 0;display:none}
+.nowbar b{color:var(--maple)}
+section.day{padding:32px 0 8px}
+.dayhead{display:flex;align-items:baseline;gap:4px 12px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:10px}
+.dayhead h2{margin:0;font-size:1.65rem}.dayhead span{color:var(--soft);font-size:.95rem}
+.tl{list-style:none;margin:0;padding:0}
+.tl li{display:grid;grid-template-columns:4.4rem 1fr;gap:14px;padding:14px 0;border-bottom:1px dashed var(--line)}
+.tl li:last-child{border-bottom:0}
+.tl time{font-weight:600;font-variant-numeric:tabular-nums;color:var(--pine)}
+.tl time.approx{font-weight:500;color:var(--soft)}
+.tl h3{margin:0;font-size:1.05rem;font-weight:600;line-height:1.45}
+.tl p{margin:4px 0 0;color:var(--soft);font-size:.93rem}
+.tl li.past{opacity:.5}
+.tl li.now h3::after,.tl li.next h3::after{margin-left:6px;font-size:.72rem;padding:1px 8px;border-radius:99px;white-space:nowrap;display:inline-block;vertical-align:2px}
+.tl li.now h3::after{content:"진행 중";color:#fff;background:var(--maple)}
+.tl li.next h3::after{content:"다음 일정";color:var(--maple);border:1px solid var(--maple)}
+.maplinks{margin-top:8px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{font-size:.85rem;text-decoration:none;padding:6px 12px;min-height:36px;display:inline-flex;align-items:center;border-radius:8px;border:1px solid var(--line);background:var(--card)}
+.hike{margin:18px 0 8px;background:var(--card);border-radius:14px;padding:18px 16px 14px}
+.hike-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.hike h3{margin:0 0 2px;font-size:1.2rem}.hike .sub{margin:0;color:var(--soft);font-size:.9rem}
+.replay{flex:none;font:inherit;font-size:.85rem;font-weight:600;cursor:pointer;min-height:40px;padding:6px 14px;border-radius:99px;border:1px solid var(--pine);color:var(--pine);background:transparent}
+.clock{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px;margin-top:14px}
+.clock .tm{font-size:1.9rem;font-weight:600;font-variant-numeric:tabular-nums;color:var(--pine);line-height:1.1}
+.clock .st{color:var(--soft)}.clock .st.top{color:var(--maple);font-weight:600}
+.profile{display:block;width:100%;max-width:560px;height:auto;margin:6px auto 0}
+.profile .area{fill:var(--pine);opacity:.12}
+.profile .base{fill:none;stroke:var(--line);stroke-width:2.5;stroke-dasharray:3 4}
+.profile .done{fill:none;stroke:var(--pine);stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
+.profile .grid{stroke:var(--line)}
+.profile text{fill:var(--ink);font-family:inherit;font-size:12px}
+.profile .t{font-weight:600;fill:var(--pine)}.profile .muted{fill:var(--soft);font-size:11px}
+.profile .wp{fill:var(--card);stroke:var(--line);stroke-width:2;transition:fill .3s,stroke .3s}
+.profile .wp.hit{fill:var(--pine);stroke:var(--pine)}
+.profile .wp.top.hit{fill:var(--maple);stroke:var(--maple)}
+.profile .hiker{fill:var(--maple)}.profile .halo{fill:var(--maple);opacity:.25}
+@media (prefers-reduced-motion:no-preference){
+ .profile .halo{animation:pulse 1.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+ @keyframes pulse{0%,100%{transform:scale(1);opacity:.28}50%{transform:scale(1.5);opacity:.08}}
+ .ridge .near{animation:rise .9s ease-out both}
+ @keyframes rise{from{transform:translateY(24px);opacity:0}to{transform:none;opacity:1}}
+}
+.hike ul{margin:12px 0 0;padding-left:1.1em;color:var(--soft);font-size:.9rem}
+.place,.pack{padding:32px 0 8px}
+.place h2,.pack h2{font-size:1.5rem;margin:0 0 10px}
+.addr{background:var(--card);border-radius:14px;padding:16px}
+.addr strong{display:block;font-size:1.05rem}.addr .a{color:var(--soft);margin-top:4px}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.btn{font:inherit;font-size:.92rem;font-weight:600;text-decoration:none;cursor:pointer;min-height:44px;padding:10px 14px;border-radius:10px;border:1px solid var(--pine);color:var(--pine);background:transparent;display:inline-flex;align-items:center;justify-content:center}
+.btn.fill{background:var(--pine);color:var(--onpine)}
+.pack p.note{margin:0 0 8px;color:var(--soft);font-size:.9rem}
+.checks{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;column-gap:20px}
+.checks label{display:flex;gap:12px;align-items:center;cursor:pointer;min-height:44px}
+.checks input{width:20px;height:20px;margin:0;accent-color:var(--pine)}
+.checks input:checked+span{text-decoration:line-through;color:var(--soft)}
+footer{padding:40px 0 48px;color:var(--soft);font-size:.9rem;text-align:center}
+footer .verse{font-size:1.02rem;color:var(--ink);margin-bottom:6px}
+@media (max-width:560px){
+ .wrap{padding:0 16px}.hero{padding-top:28px}
+ .facts dl{grid-template-columns:1fr 1fr}.facts .full{grid-column:1/-1}
+ section.day,.place,.pack{padding-top:26px}
+ .dayhead h2{font-size:1.45rem}
+ .tl li{grid-template-columns:3.5rem 1fr;gap:10px}
+ .tl h3{font-size:1rem}
+ .hike{margin-left:-6px;margin-right:-6px;padding:16px 14px 12px}
+ .clock .tm{font-size:1.6rem}
+ .btns .btn{flex:1 1 calc(50% - 4px)}.btns .btn.fill{flex-basis:100%}
+ .checks{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+ <div class="wrap">
+  <p class="church">부곡이웃교회 남성목장</p>
+  <h1 class="serif">함께라서 좋은<br>부곡이웃교회 남성 목장의 가을소풍</h1>
+  <p class="lede">울산바위에 오르고, 속초 바다를 걷고, 저녁엔 불 앞에 둘러앉습니다. 셋째 날은 용소폭포를 보고 집으로 돌아옵니다.</p>
+ </div>
+ <svg class="ridge" viewBox="0 0 800 120" preserveAspectRatio="none" aria-hidden="true">
+  <path class="far" d="M0 120 L0 78 L70 60 L140 72 L210 44 L280 62 L360 38 L430 58 L520 30 L600 54 L690 40 L800 64 L800 120 Z"/>
+  <path class="near" d="M0 120 L0 96 L90 88 L170 98 L250 80 L300 84 L330 58 L352 66 L370 40 L392 52 L410 34 L430 50 L448 42 L470 62 L500 70 L580 86 L660 78 L740 92 L800 86 L800 120 Z"/>
+ </svg>
+</header>
+
+<div class="facts"><div class="wrap">
+ <dl>
+  <div><dt>일시</dt><dd>10월 2일(금) ~ 3일(토)</dd></div>
+  <div><dt>장소</dt><dd>인제 연수원</dd></div>
+  <div class="full"><dt>참석</dt><dd>9명</dd></div>
+ </dl>
+ <span class="dday" id="dday"></span>
+</div></div>
+
+<nav class="daynav" aria-label="일정 바로가기"><div class="wrap">
+ <a href="#day1">10/1 선발대</a><a href="#day2">10/2 설악·속초</a><a href="#day3">10/3 용소폭포</a><a href="#stay">숙소</a><a href="#pack">챙길 것</a>
+</div></nav>
+
+<main class="wrap">
+ <div class="nowbar" id="nowbar" role="status"></div>
+
+ <section class="day" id="day1">
+  <div class="dayhead"><h2 class="serif">10월 1일 (목)</h2><span>선발대</span></div>
+  <ol class="tl">
+   <li data-start="2026-10-01T18:00" data-end="2026-10-01T23:59"><time>18:00</time><div><h3>선발대 출발</h3><p>인제 연수원으로 먼저 이동해 숙소와 다음 날 준비를 챙깁니다.</p></div></li>
+  </ol>
+ </section>
+
+ <section class="day" id="day2">
+  <div class="dayhead"><h2 class="serif">10월 2일 (금)</h2><span>울산바위 · 속초 · 바베큐</span></div>
+  <ol class="tl">
+   <li data-start="2026-10-02T07:30" data-end="2026-10-02T08:40"><time>07:30</time><div><h3>인제 연수원 출발</h3><p>아침 식사는 출발 전에 마쳐 주세요.</p></div></li>
+   <li data-start="2026-10-02T08:40" data-end="2026-10-02T11:00"><time>08:40</time><div><h3>설악산 국립공원 도착 · 등반 시작</h3><p>소공원에서 출발해 신흥사, 흔들바위를 지나 울산바위로 오릅니다.</p>
+    <div class="maplinks"><a class="chip" target="_blank" rel="noopener" href="https://map.kakao.com/link/search/설악산%20소공원">카카오맵</a><a class="chip" target="_blank" rel="noopener" href="https://map.naver.com/p/search/설악산%20소공원">네이버지도</a></div></div></li>
+   <li data-start="2026-10-02T11:00" data-end="2026-10-02T11:20"><time>11:00</time><div><h3>울산바위 도착</h3><p>20분 동안 쉬면서 사진 찍고 동해 쪽 전망을 봅니다.</p></div></li>
+   <li data-start="2026-10-02T11:20" data-end="2026-10-02T13:10"><time>11:20</time><div><h3>하산 시작</h3><p>내려올 때 계단 구간에서 무릎을 조심하세요.</p></div></li>
+   <li data-start="2026-10-02T13:10" data-end="2026-10-02T13:40"><time>13:10</time><div><h3>설악산 국립공원 도착</h3><p>인원 확인 후 차량으로 속초 시내 이동.</p></div></li>
+   <li data-start="2026-10-02T13:40" data-end="2026-10-02T16:30"><time class="approx">오후</time><div><h3>속초 시내 관광</h3><p>세부 코스는 현장에서 정합니다.</p></div></li>
+   <li data-start="2026-10-02T16:30" data-end="2026-10-02T18:00"><time>16:30</time><div><h3>본대 도착</h3><p>인제 연수원에 도착해 선발대와 합류합니다.</p></div></li>
+   <li data-start="2026-10-02T18:00" data-end="2026-10-02T21:00"><time class="approx">저녁</time><div><h3>바베큐 · 캠프파이어</h3><p>인제 연수원으로 돌아와 함께 저녁을 준비하고 교제합니다.</p></div></li>
+   <li data-start="2026-10-02T21:00" data-end="2026-10-02T22:00"><time>21:00</time><div><h3>후발대 도착</h3><p>인제 연수원에 도착해 함께 합류합니다.</p></div></li>
+   <li data-start="2026-10-02T22:00" data-end="2026-10-02T23:59"><time>22:00</time><div><h3>QT 시간</h3><p>모두 모여 말씀을 묵상하고 나누며 하루를 마무리합니다.</p></div></li>
+  </ol>
+
+  <div class="hike" id="hike">
+   <div class="hike-top">
+    <div><h3 class="serif">울산바위 코스</h3><p class="sub">소공원 ↔ 울산바위 왕복, 4시간 30분</p></div>
+    <button class="replay" id="replay" type="button">다시 보기</button>
+   </div>
+   <div class="clock"><span class="tm" id="clockTime">08:40</span><span class="st" id="clockState">소공원 출발</span></div>
+   <svg class="profile" viewBox="0 0 360 252" role="img" aria-label="울산바위 등반: 08:40 소공원 출발, 11:00 정상, 11:20 하산, 13:10 소공원 도착">
+    <line class="grid" x1="12" y1="204" x2="348" y2="204"/>
+    <path class="area" d="M20 204 L20 196 L60 188 L100 176 L135 142 L160 102 L175 72 L186 50 L210 50 L225 74 L245 108 L270 140 L305 172 L340 196 L340 204 Z"/>
+    <path class="base" d="M20 196 L60 188 L100 176 L135 142 L160 102 L175 72 L186 50 L210 50 L225 74 L245 108 L270 140 L305 172 L340 196"/>
+    <path class="done" id="route" d="M20 196 L60 188 L100 176 L135 142 L160 102 L175 72 L186 50 L210 50 L225 74 L245 108 L270 140 L305 172 L340 196"/>
+    <circle class="wp" data-t="520" cx="20" cy="196" r="5"/>
+    <circle class="wp" data-t="590" cx="135" cy="142" r="4"/>
+    <circle class="wp top" data-t="660" cx="186" cy="50" r="6"/>
+    <circle class="wp top" data-t="680" cx="210" cy="50" r="6"/>
+    <circle class="wp" data-t="790" cx="340" cy="196" r="5"/>
+    <text x="198" y="30" text-anchor="middle" class="t">울산바위 873m</text>
+    <text x="180" y="54" text-anchor="end" class="t">11:00</text>
+    <text x="216" y="54" class="t">11:20</text>
+    <text x="143" y="150" class="muted">흔들바위</text>
+    <text x="20" y="180" class="muted">소공원</text>
+    <text x="340" y="180" text-anchor="end" class="muted">소공원</text>
+    <text x="20" y="222" class="t">08:40</text>
+    <text x="340" y="222" text-anchor="end" class="t">13:10</text>
+    <text x="103" y="242" text-anchor="middle" class="muted">오르막 2시간 20분</text>
+    <text x="275" y="242" text-anchor="middle" class="muted">내리막 1시간 50분</text>
+    <g id="hiker" transform="translate(20 196)"><circle class="halo" r="11"/><circle class="hiker" r="6"/></g>
+   </svg>
+   <ul>
+    <li>정상 직전은 가파른 철계단이 이어집니다. 서로 속도를 맞춰 주세요.</li>
+    <li>10월 정상은 바람이 차니 얇은 겉옷을 꼭 챙기세요.</li>
+   </ul>
+  </div>
+ </section>
+
+ <section class="day" id="day3">
+  <div class="dayhead"><h2 class="serif">10월 3일 (토)</h2><span>용소폭포 · 귀가</span></div>
+  <ol class="tl">
+   <li data-start="2026-10-03T08:00" data-end="2026-10-03T12:00"><time class="approx">오전</time><div><h3>용소폭포 탐방</h3><p>인제군 상남면. 숙소를 정리하고 출발합니다.</p>
+    <div class="maplinks"><a class="chip" target="_blank" rel="noopener" href="https://map.kakao.com/link/search/인제%20상남%20용소폭포">카카오맵</a><a class="chip" target="_blank" rel="noopener" href="https://map.naver.com/p/search/인제%20상남%20용소폭포">네이버지도</a></div></div></li>
+   <li data-start="2026-10-03T12:00" data-end="2026-10-03T13:30"><time class="approx">점심</time><div><h3>점심 식사</h3><p>함께 식사하고 마무리 기도.</p></div></li>
+   <li data-start="2026-10-03T13:30" data-end="2026-10-03T20:00"><time class="approx">오후</time><div><h3>귀가</h3><p>연휴 귀경길 정체가 예상됩니다. 운전은 교대로, 쉬어 가며.</p></div></li>
+  </ol>
+ </section>
+
+ <section class="place" id="stay">
+  <h2 class="serif">숙소</h2>
+  <div class="addr">
+   <strong>인제 연수원</strong>
+   <div class="a">강원도 인제군 상남면 미산리 678-8<br>(도로명) 귀미말길 135</div>
+   <div class="btns">
+    <a class="btn fill" target="_blank" rel="noopener" href="https://map.kakao.com/link/search/강원도%20인제군%20상남면%20미산리%20678-8">카카오맵으로 길찾기</a>
+    <a class="btn" target="_blank" rel="noopener" href="https://map.naver.com/p/search/강원도%20인제군%20상남면%20미산리%20678-8">네이버지도</a>
+    <button class="btn" id="copy" type="button">주소 복사</button>
+   </div>
+  </div>
+ </section>
+
+ <section class="pack" id="pack">
+  <h2 class="serif">챙길 것</h2>
+  <p class="note">체크한 항목은 이 기기에 저장됩니다.</p>
+  <ul class="checks" id="checks"></ul>
+ </section>
+</main>
+
+<footer><div class="wrap">
+ <div class="verse serif">“내가 산을 향하여 눈을 들리라”</div>
+ <div>시편 121:1 · 부곡이웃교회 남성목장</div>
+</div></footer>
+
+<script>
+(function(){
+ var now=new Date(),start=new Date(2026,9,2),end=new Date(2026,9,3,23,59);
+ var today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+ var diff=Math.round((start-today)/86400000);
+ document.getElementById('dday').textContent=diff>0?'출발까지 D-'+diff:(now<=end?'야유회 진행 중':'함께해 주셔서 감사합니다');
+
+ // 지금 / 다음 일정 표시
+ var nowItem=null,nextItem=null;
+ [].slice.call(document.querySelectorAll('.tl li')).forEach(function(li){
+  var s=new Date(li.dataset.start),e=new Date(li.dataset.end);
+  if(now>=e)li.classList.add('past');
+  else if(now>=s&&!nowItem){li.classList.add('now');nowItem=li;}
+  else if(now<s&&!nextItem)nextItem=li;
+ });
+ var live=now>=new Date('2026-10-01T18:00')&&now<=end;
+ if(live&&nextItem)nextItem.classList.add('next');
+ if(live&&(nowItem||nextItem)){
+  var bar=document.getElementById('nowbar'),t=nowItem||nextItem;
+  bar.innerHTML=nowItem?'<b>지금</b> ':'<b>다음</b> ';
+  bar.appendChild(document.createTextNode(t.querySelector('h3').textContent));
+  bar.style.display='block';
+ }
+
+ // 상단 탭 강조
+ var links=[].slice.call(document.querySelectorAll('.daynav a')),navWrap=document.querySelector('.daynav .wrap');
+ if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){
+   if(!en.isIntersecting)return;
+   links.forEach(function(a){var on=a.getAttribute('href')==='#'+en.target.id;a.classList.toggle('on',on);if(on)navWrap.scrollLeft=a.offsetLeft-16;});
+  });},{rootMargin:'-30% 0px -60% 0px'});
+  ['day1','day2','day3','stay','pack'].forEach(function(id){io.observe(document.getElementById(id));});
+ }
+
+ // 등산 애니메이션
+ var route=document.getElementById('route'),hiker=document.getElementById('hiker');
+ var wps=[].slice.call(document.querySelectorAll('.profile .wp'));
+ var cT=document.getElementById('clockTime'),cS=document.getElementById('clockState');
+ var L=route.getTotalLength(),T0=520,T1=790,X0=20,X1=340,DUR=7000;
+ route.style.strokeDasharray=L;route.style.strokeDashoffset=L;
+ function lenAtX(x){var lo=0,hi=L;for(var i=0;i<22;i++){var m=(lo+hi)/2;if(route.getPointAtLength(m).x<x)lo=m;else hi=m;}return hi;}
+ function fmt(m){m=Math.round(m);var h=Math.floor(m/60),mm=m%60;return(h<10?'0':'')+h+':'+(mm<10?'0':'')+mm;}
+ function st(m){
+  if(m<=T0+1)return['소공원 출발',0];
+  if(m<590)return['신흥사 지나 오르는 중',0];
+  if(m<660)return['흔들바위 지나 철계단 구간',0];
+  if(m<=680)return['울산바위 정상에서 휴식',1];
+  if(m<T1-1)return['하산 중',0];
+  return['소공원 도착',0];
+ }
+ function render(m){
+  var len=m>=T1?L:lenAtX(X0+(m-T0)/(T1-T0)*(X1-X0)),p=route.getPointAtLength(len);
+  route.style.strokeDashoffset=L-len;
+  hiker.setAttribute('transform','translate('+p.x.toFixed(1)+' '+p.y.toFixed(1)+')');
+  wps.forEach(function(w){w.classList.toggle('hit',m>=+w.dataset.t-0.5);});
+  cT.textContent=fmt(m);var s=st(m);cS.textContent=s[0];cS.classList.toggle('top',!!s[1]);
+ }
+ var raf=null;
+ function play(){
+  cancelAnimationFrame(raf);var t0=null;
+  function step(ts){if(t0===null)t0=ts;var k=Math.min(1,(ts-t0)/DUR),e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;render(T0+e*(T1-T0));if(k<1)raf=requestAnimationFrame(step);}
+  raf=requestAnimationFrame(step);
+ }
+ var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+ render(reduce?T1:T0);
+ if(!reduce){
+  if('IntersectionObserver' in window)new IntersectionObserver(function(en,o){if(en[0].isIntersecting){play();o.disconnect();}},{threshold:.45}).observe(document.getElementById('hike'));
+  else play();
+ }
+ document.getElementById('replay').addEventListener('click',function(){reduce?render(T1):play();});
+
+ // 주소 복사
+ document.getElementById('copy').addEventListener('click',function(){
+  var b=this;function done(ok){b.textContent=ok?'복사됨':'주소를 길게 눌러 복사하세요';setTimeout(function(){b.textContent='주소 복사';},2200);}
+  try{navigator.clipboard.writeText('강원도 인제군 상남면 미산리 678-8 (귀미말길 135)').then(function(){done(1)},function(){done(0)});}catch(e){done(0);}
+ });
+
+ // 준비물 체크리스트
+ var list=['등산화','물 1L 이상','간식 · 행동식','바람막이 · 얇은 겉옷','모자 · 선크림','우비','세면도구 · 수건','여벌 옷','개인 상비약','휴대폰 충전기','성경'],saved={};
+ try{saved=JSON.parse(localStorage.getItem('bugok-outing-pack')||'{}')||{};}catch(e){}
+ var ul=document.getElementById('checks');
+ list.forEach(function(n,i){
+  var li=document.createElement('li');li.innerHTML='<label for="p'+i+'"><input type="checkbox" id="p'+i+'"><span></span></label>';
+  li.querySelector('span').textContent=n;var cb=li.querySelector('input');cb.checked=!!saved[n];
+  cb.addEventListener('change',function(){saved[n]=cb.checked;try{localStorage.setItem('bugok-outing-pack',JSON.stringify(saved));}catch(e){}});
+  ul.appendChild(li);
+ });
+})();
+</script>
+</body>
+</html>
